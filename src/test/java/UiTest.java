@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import static com.codeborne.selenide.Browsers.CHROME;
 import static com.codeborne.selenide.Browsers.FIREFOX;
 import static com.codeborne.selenide.Selenide.switchTo;
 import static com.xm.utils.Const.*;
@@ -20,7 +21,7 @@ public class UiTest {
     @BeforeMethod
     public void setUp() {
         WebDriverManager.chromedriver().setup();
-        Configuration.browser = FIREFOX;
+        Configuration.browser = CHROME;
         Configuration.baseUrl = "https://www.xm.com/";
         Configuration.timeout = 10000;
     }
