@@ -20,9 +20,9 @@ public class UiTest {
 
     @BeforeMethod
     public void setUp() {
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.firefoxdriver().setup();
         Configuration.headless = true;
-        Configuration.browser = CHROME;
+        Configuration.browser = FIREFOX;
         Configuration.baseUrl = "https://www.xm.com/";
         Configuration.timeout = 10000;
     }

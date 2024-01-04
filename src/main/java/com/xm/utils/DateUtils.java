@@ -10,18 +10,20 @@ import java.util.Locale;
 
 public class DateUtils {
 
+    private final static String DATE_FORMAT = "yyyy MMM dd";
+
     public static String currentDate() {
-        return new SimpleDateFormat("yyyy MMM dd", Locale.ENGLISH).format(new Date());
+        return new SimpleDateFormat(DATE_FORMAT, Locale.ENGLISH).format(new Date());
     }
 
     public static String nextDate() {
-        return new SimpleDateFormat("yyyy MMM dd", Locale.ENGLISH).format(new Date(new Date().getTime() + 86400000));
+        return new SimpleDateFormat(DATE_FORMAT, Locale.ENGLISH).format(new Date(new Date().getTime() + 86400000));
     }
 
     public static String nextMonday() {
         LocalDate today = LocalDate.now();
         LocalDate nextMonday = today.with(TemporalAdjusters.next(DayOfWeek.MONDAY));
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy MMM dd", Locale.ENGLISH);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_FORMAT, Locale.ENGLISH);
         return nextMonday.format(formatter);
     }
 }
