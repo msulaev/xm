@@ -21,6 +21,7 @@ public class UiTest {
     @BeforeMethod
     public void setUp() {
         WebDriverManager.chromedriver().setup();
+        Configuration.headless = true;
         Configuration.browser = CHROME;
         Configuration.baseUrl = "https://www.xm.com/";
         Configuration.timeout = 10000;
