@@ -4,6 +4,8 @@ import com.xm.pages.EconomicCalendar;
 import com.xm.pages.EducationalVideosPage;
 import com.xm.pages.MainPage;
 import com.xm.utils.DateUtils;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.manager.SeleniumManager;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -17,6 +19,7 @@ public class UiTest {
 
     @BeforeMethod
     public void setUp() {
+        WebDriverManager.chromedriver().setup();
         Configuration.browser = FIREFOX;
         Configuration.baseUrl = "https://www.xm.com/";
         Configuration.timeout = 10000;
