@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import static com.codeborne.selenide.Browsers.FIREFOX;
+import static com.codeborne.selenide.Browsers.CHROME;
 import static com.codeborne.selenide.Selenide.switchTo;
 import static com.xm.utils.Const.*;
 
@@ -19,14 +19,13 @@ public class UiTest {
 
     @BeforeMethod
     public void setUp() {
-        WebDriverManager.firefoxdriver().setup();
-        Configuration.headless = false;
-        Configuration.browser = FIREFOX;
+        WebDriverManager.chromedriver().setup();
+        Configuration.headless = true;
+        Configuration.browser = CHROME;
         Configuration.baseUrl = "https://www.xm.com/";
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--enable-geolocation", "--geolocation=40.730610,-73.935242");
         Configuration.browserCapabilities = chromeOptions;
-
         Configuration.timeout = 10000;
     }
 
