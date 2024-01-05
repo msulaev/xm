@@ -26,4 +26,9 @@ public class DateUtils {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_FORMAT, Locale.ENGLISH);
         return nextMonday.format(formatter);
     }
+
+    public static LocalDate parseReleaseDate(String dateString) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        return LocalDate.parse(dateString, formatter);
+    }
 }

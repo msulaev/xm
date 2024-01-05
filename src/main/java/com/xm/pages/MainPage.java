@@ -27,7 +27,7 @@ public class MainPage {
 
     @Step("Click accept modal")
     public void acceptModal() {
-      //  acceptModal.shouldBe(visible).click();
+        acceptModal.shouldBe(visible).click();
     }
 
     @Step("Navigate to {0}")
