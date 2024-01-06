@@ -38,7 +38,7 @@ public class UiTest {
         EducationalVideosPage educationalVideosPage = new EducationalVideosPage();
 
         mainPage.open();
-      //  mainPage.acceptModal();
+        mainPage.acceptModal();
         mainPage.navigation(ECONOMIC_CALENDAR);
         economicCalendar.switchToFrame();
         economicCalendar.increaseSlider();
