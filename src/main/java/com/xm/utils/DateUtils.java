@@ -9,8 +9,7 @@ import java.util.Date;
 import java.util.Locale;
 
 public class DateUtils {
-
-    private final static String DATE_FORMAT = "yyyy MMM dd";
+    private static final String DATE_FORMAT = "E MMM dd yyyy";
 
     public static String currentDate() {
         return new SimpleDateFormat(DATE_FORMAT, Locale.ENGLISH).format(new Date());

@@ -1,4 +1,4 @@
-name: Run Test and Build
+name: Don't run
 
 on:
   workflow_dispatch:
@@ -24,3 +24,22 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean test
+
+
+      - name: Run tests and generate Allure report
+        run: mvn allure:report
+
+      - name: Install Allure CLI
+        run: |
+          wget https://github.com/allure-framework/allure2/releases/download/2.14.0/allure-2.14.0.zip
+          unzip allure-2.14.0.zip
+          sudo cp -r allure-2.14.0/. /usr/bin/allure
+
+      - name: Generate Allure site
+        run: allure generate target/allure-results --clean -o target/allure-report
+
+      - name: Publish to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./target/allure-report

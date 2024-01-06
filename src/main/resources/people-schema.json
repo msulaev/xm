@@ -9,7 +9,7 @@
     "type": ["string", "null"], "format": "uri"
     },
     "previous": {
-      "type": "string"
+      "type": ["string", "null"]
     },
     "results": {
       "type": "array",

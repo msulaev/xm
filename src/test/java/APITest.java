@@ -23,7 +23,7 @@ public class APITest {
 
     @Test
     public void findLatestFilmAndTallestPerson() {
-        Response filmsResponse = RestAssured.get(BASE_URL + "/films");
+        Response filmsResponse = RestAssured.get("/films");
         List<Map<String, Object>> films = filmsResponse.jsonPath().getList("results");
 
         Map<String, Object> latestFilm = films.stream()
@@ -42,7 +42,7 @@ public class APITest {
     @Test
     public void findTallestPersonEver() {
         List<Map<String, Object>> people = new ArrayList<>();
-        Response peopleResponse = RestAssured.get(BASE_URL + "/people");
+        Response peopleResponse = RestAssured.get("/people");
         String nextPage = peopleResponse.jsonPath().getString("next");
 
         while (nextPage != null) {

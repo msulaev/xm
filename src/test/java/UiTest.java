@@ -5,13 +5,12 @@ import com.xm.pages.EducationalVideosPage;
 import com.xm.pages.MainPage;
 import com.xm.utils.DateUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import static com.codeborne.selenide.Browsers.CHROME;
+import static com.codeborne.selenide.Browsers.FIREFOX;
 import static com.codeborne.selenide.Selenide.switchTo;
 import static com.xm.utils.Const.*;
 
@@ -21,11 +20,8 @@ public class UiTest {
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         Configuration.headless = true;
-        Configuration.browser = CHROME;
+        Configuration.browser = FIREFOX;
         Configuration.baseUrl = "https://www.xm.com/";
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--enable-geolocation", "--geolocation=40.730610,-73.935242");
-        Configuration.browserCapabilities = chromeOptions;
         Configuration.timeout = 10000;
     }
 
