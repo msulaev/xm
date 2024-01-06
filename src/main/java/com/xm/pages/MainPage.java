@@ -17,8 +17,6 @@ public class MainPage {
     private final SelenideElement menu = $(byText("Menu"));
     private final SelenideElement researchEducation = $(byText("RESEARCH & EDUCATION"));
     private final SelenideElement researchEducationSmallLeftMenu = $("[href='#researchMenu']");
-    ;
-
 
     @Step("Open main page")
     public static void open() {
